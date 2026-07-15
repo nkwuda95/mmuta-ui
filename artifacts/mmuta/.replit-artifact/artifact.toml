@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Mmuta"
+version = "1.0.0"
+id = "artifacts/mmuta"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18100
+
+[services.development]
+run = "pnpm --filter @workspace/mmuta run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/mmuta", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/mmuta/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18100"
+BASE_PATH = "/"

@@ -1,0 +1,344 @@
+I am building an AI-powered Igbo language learning application. I want you to create **only the frontend** and a lightweight local API integration layer. Do **not** implement any chatbot logic or AI responses yet.
+
+## Goal
+
+Build a polished, responsive web application that I can run locally. The frontend should communicate with a future Python backend through REST endpoints.
+
+Use modern best practices and clean, maintainable code.
+
+---
+
+# Tech Stack
+
+Use:
+
+* React
+* Vite
+* TypeScript
+* Tailwind CSS
+* shadcn/ui components
+* React Router
+* TanStack Query for API calls
+* React Hook Form where appropriate
+* Lucide icons
+
+The application should run locally with:
+
+```bash
+npm install
+npm run dev
+```
+
+---
+
+# Overall Design
+
+The application should feel like Duolingo meets ChatGPT.
+
+Requirements:
+
+* modern
+* clean
+* minimal
+* responsive
+* mobile friendly
+* soft green color palette inspired by Igbo culture
+* subtle animations
+* rounded cards
+* excellent spacing
+* dark mode support
+
+---
+
+# Pages
+
+## 1. Landing Page
+
+Include:
+
+* Hero section
+* Brief description
+* "Start Learning" button
+* Features section
+* Footer
+
+---
+
+## 2. Dashboard
+
+Show:
+
+* Welcome message
+* Current level
+* Current lesson
+* Vocabulary learned
+* Grammar topics completed
+* Daily streak (placeholder)
+* Progress bar
+* Continue Learning button
+
+Use placeholder data.
+
+---
+
+## 3. Chat / Tutor Page
+
+This is the primary screen.
+
+Layout:
+
+Left sidebar:
+
+* Conversation history
+* New Conversation button
+
+Main area:
+
+* Chat messages
+* User messages on right
+* Assistant messages on left
+* Markdown rendering
+* Code blocks (future-proof)
+* Audio playback placeholder
+* Typing indicator
+* Scroll to latest message
+
+Bottom:
+
+Large chat input
+
+Buttons:
+
+* Send
+* Microphone (placeholder)
+* Clear
+
+---
+
+## 4. Lesson Page
+
+Display:
+
+Lesson title
+
+Vocabulary section
+
+Each vocabulary card contains:
+
+* Igbo word
+* English meaning
+* Pronunciation
+* Example sentence
+* Play audio button (placeholder)
+
+Grammar section
+
+Practice section
+
+Quiz section
+
+All data should currently come from mock JSON.
+
+---
+
+## 5. Progress Page
+
+Display:
+
+* Vocabulary learned
+* Grammar completed
+* Lesson completion
+* Streak
+* Accuracy
+* Charts (mock data)
+
+---
+
+## Components
+
+Create reusable components.
+
+Examples:
+
+ChatMessage
+
+ChatInput
+
+Sidebar
+
+Navbar
+
+VocabularyCard
+
+GrammarCard
+
+QuizCard
+
+ProgressCard
+
+LoadingSpinner
+
+TypingIndicator
+
+ThemeToggle
+
+---
+
+# API Layer
+
+The frontend should NOT contain chatbot logic.
+
+Instead create an API service.
+
+Example:
+
+```typescript
+POST /api/chat
+
+{
+  "message": "...",
+  "conversation_id": "...",
+  "user_level": "Beginner"
+}
+```
+
+Expected response:
+
+```json
+{
+  "response": "...",
+  "lesson_state": {},
+  "vocabulary": [],
+  "grammar": []
+}
+```
+
+The frontend should call this endpoint but for now use mocked responses if the backend is unavailable.
+
+Create an `api.ts` service to isolate all API calls.
+
+---
+
+# State Management
+
+Maintain:
+
+* current conversation
+* chat history
+* lesson progress
+* selected lesson
+* user settings
+* dark mode
+
+Use React Context or Zustand.
+
+---
+
+# Folder Structure
+
+Use a clean architecture.
+
+Example:
+
+```
+src/
+
+components/
+
+pages/
+
+hooks/
+
+services/
+
+types/
+
+contexts/
+
+utils/
+
+assets/
+```
+
+---
+
+# Mock Data
+
+Create realistic mock data for:
+
+* vocabulary
+* lessons
+* conversations
+* progress
+* grammar
+* quizzes
+
+Place these inside a dedicated mock folder.
+
+---
+
+# Styling
+
+Use Tailwind only.
+
+Avoid inline CSS.
+
+Use reusable utility classes.
+
+---
+
+# Accessibility
+
+Include:
+
+* keyboard navigation
+* semantic HTML
+* ARIA labels
+* sufficient color contrast
+
+---
+
+# Code Quality
+
+Use:
+
+* strict TypeScript
+* reusable hooks
+* modular components
+* comments only where helpful
+* clean naming conventions
+
+---
+
+# Future Backend Compatibility
+
+The UI should be designed so a Python FastAPI backend can later be connected with minimal changes.
+
+Do not hardcode AI logic.
+
+All chatbot interactions should go through the API service layer.
+
+Use mock data until the backend exists.
+
+---
+
+# Deliverables
+
+Generate a complete, production-quality frontend with:
+
+* all pages
+* routing
+* reusable components
+* mock API integration
+* placeholder data
+* responsive layout
+* clean project structure
+
+The finished project should be immediately runnable locally using:
+
+```bash
+npm install
+npm run dev
+```
+
+without requiring any backend.
